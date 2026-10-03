@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Radhika | My Skills</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #11182d;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: #00d9ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* HOME */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: linear-gradient(135deg, #0b1020, #16245c);
+        }
+
+        .home-content h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .home-content h1 span {
+            color: #00d9ff;
+        }
+
+        .home-content h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            color: #b9c7ff;
+        }
+
+        .home-content p {
+            max-width: 650px;
+            line-height: 1.7;
+            margin: auto;
+            color: #d6d6d6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: #00d9ff;
+            color: #07101d;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* COMMON SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 45px;
+            color: #00d9ff;
+        }
+
+        /* ABOUT */
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .about p {
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+
+        /* SKILLS */
+        #skills {
+            background: #10172b;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #18213b;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            color: #00d9ff;
+        }
+
+        .skill-card p {
+            color: #d0d0d0;
+        }
+
+        /* SKILL BAR */
+        .skill-bars {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .bar {
+            margin-bottom: 25px;
+        }
+
+        .bar-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 10px;
+            background: #30384f;
+            border-radius: 10px;
+        }
+
+        .progress span {
+            display: block;
+            height: 100%;
+            background: #00d9ff;
+            border-radius: 10px;
+        }
+
+        .html {
+            width: 90%;
+        }
+
+        .python {
+            width: 80%;
+        }
+
+        .java {
+            width: 70%;
+        }
+
+        .c {
+            width: 75%;
+        }
+
+        .sql {
+            width: 70%;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #18213b;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+
+        .project-card h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            line-height: 1.6;
+            color: #d0d0d0;
+        }
+
+        /* STRENGTHS */
+        .strengths {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .strength {
+            padding: 18px 30px;
+            background: #18213b;
+            border-radius: 30px;
+            border: 1px solid #00d9ff;
+        }
+
+        /* CONTACT */
+        #contact {
+            background: #10172b;
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin: 15px 0;
+            color: #d0d0d0;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #080d19;
+            color: #aaa;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .home-content h1 {
+                font-size: 40px;
+            }
+
+            .home-content h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Radhika</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+    <section id="home">
+
+        <div class="home-content">
+
+            <h1>Hello, I'm <span>Radhika</span></h1>
+
+            <h3>BCA Student | Future IT Professional</h3>
+
+            <p>
+                Welcome to my personal skills portfolio.
+                I am interested in technology, programming,
+                creativity and learning new things.
+            </p>
+
+            <a href="#skills" class="btn">Explore My Skills</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am a BCA student with an interest in
+                programming and technology. I enjoy learning
+                new skills and working on creative projects.
+                My goal is to improve my technical knowledge
+                and build a successful career in the IT field.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="title">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Creating attractive and responsive web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Writing programs and solving basic problems.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Learning object-oriented programming concepts.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>C Programming</h3>
+                <p>Understanding logic, conditions, loops and arrays.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>SQL</h3>
+                <p>Working with databases and queries.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Cybersecurity</h3>
+                <p>Learning about online safety and cyber awareness.</p>
+            </div>
+
+        </div>
+
+
+        <!-- SKILL BARS -->
+
+        <div class="skill-bars">
+
+            <div class="bar">
+                <div class="bar-title">
+                    <span>HTML & CSS</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="progress">
+                    <span class="html"></span>
+                </div>
+            </div>
+
+
+            <div class="bar">
+                <div class="bar-title">
+                    <span>Python</span>
+                    <span>80%</span>
+                </div>
+
+                <div class="progress">
+                    <span class="python"></span>
+                </div>
+            </div>
+
+
+            <div class="bar">
+                <div class="bar-title">
+                    <span>C Programming</span>
+                    <span>75%</span>
+                </div>
+
+                <div class="progress">
+                    <span class="c"></span>
+                </div>
+            </div>
+
+
+            <div class="bar">
+                <div class="bar-title">
+                    <span>Java</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="progress">
+                    <span class="java"></span>
+                </div>
+            </div>
+
+
+            <div class="bar">
+                <div class="bar-title">
+                    <span>SQL</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="progress">
+                    <span class="sql"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="title">My Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+
+                <h3>🛡️ Cyber Guardian</h3>
+
+                <p>
+                    A cybersecurity awareness game designed
+                    to help users understand online safety,
+                    cyber threats and safe digital practices.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🌐 Personal Portfolio</h3>
+
+                <p>
+                    A responsive personal website created
+                    using HTML and CSS to showcase my
+                    skills, projects and achievements.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>💻 Programming Projects</h3>
+
+                <p>
+                    Basic programming projects created using
+                    C, Python and Java to improve programming
+                    and problem-solving skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STRENGTHS -->
+    <section>
+
+        <h2 class="title">My Strengths</h2>
+
+        <div class="strengths">
+
+            <div class="strength">⭐ Quick Learner</div>
+
+            <div class="strength">🤝 Teamwork</div>
+
+            <div class="strength">💡 Creativity</div>
+
+            <div class="strength">🧠 Problem Solving</div>
+
+            <div class="strength">⏰ Time Management</div>
+
+            <div class="strength">🚀 Positive Attitude</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="title">Contact Me</h2>
+
+        <div class="contact-box">
+
+            <p>📧 Email: yourmail@gmail.com</p>
+
+            <p>📱 Phone: +91 XXXXX XXXXX</p>
+
+            <p>📍 India</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 Radhika | My Skills Portfolio</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Welcome message
+        console.log("Welcome to Radhika's Skills Portfolio!");
+
+        // Smooth navigation
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(link => {
+
+            link.addEventListener("click", function() {
+
+                console.log("Opening: " + this.textContent);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+              </html>
